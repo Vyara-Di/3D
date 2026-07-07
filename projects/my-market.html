@@ -43,14 +43,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@200..900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../styles.css">
 </head>
-<body class="is-locked">
+<body>
 
   <a class="skip-link" href="#projContent">Skip to content</a>
 
   <noscript>
     <style>
-      .loader,.cursor,.grain,.hero__sculpt-hint{display:none!important}
-      body.is-locked{overflow:auto;height:auto}
+      .cursor,.grain,.hero__sculpt-hint{display:none!important}
       .reveal,.hero__word,.hero__top,.nav{opacity:1!important;transform:none!important;filter:none!important}
       /* case-study content: without JS, .proj never receives .is-open, and it
          is normally a fixed full-viewport panel — so for no-JS visitors make
@@ -72,36 +71,10 @@
   <div class="dm-grid" id="dmGrid" aria-hidden="true"></div>
   <div class="dm-badge" id="dmBadge" aria-hidden="true"><i></i> Design mode — tap to exit</div>
 
-  <!-- LOADER (not aria-hidden: it holds the focusable Skip button while visible;
-       .is-gone applies display:none which removes it from the a11y tree anyway) -->
-  <div class="loader" id="loader">
-    <div class="loader__panel">
-      <div class="loader__inner" id="loaderInner">
-        <div class="loader__sigLayer">
-          <div class="loader__sig" id="loaderSig">
-            <svg viewBox="0 0 219.38 162.22" aria-hidden="true">
-              <defs>
-                <!-- the V mark, one continuous line, reused by both layers -->
-                <path id="sigShape" d="M162.37,24.56l13.55-22.28h37.84l-85.14,157.67H97.09L2.14,2.28h43.1l59.91,105.46V57.92l0,0
-                  c-4.68-1.57-8.06-5.99-8.06-11.21c0-6.53,5.29-11.83,11.82-11.83c6.53,0,11.83,5.3,11.83,11.83c0,4.88-2.96,9.06-7.18,10.87l0,0
-                  v94.66l56.05-104.06c0,0-14.01-3.15-18.91-22.42c-4.91-19.27-3.51-23.48-3.51-23.48H72.21c0,0-0.7,4.56-3.5,12.27
-                  c-2.8,7.7-3.16,6.71-3.16,6.71"></path>
-              </defs>
-              <!-- the ink: sketched in by dash-offset, thickens to full weight on lock -->
-              <use class="sig__pen" id="sigPen" href="#sigShape" xlink:href="#sigShape"></use>
-              <!-- the accent: a short orange segment chasing the pen tip, then settling -->
-              <use class="sig__accent" id="sigAccent" href="#sigShape" xlink:href="#sigShape"></use>
-            </svg>
-          </div>
-        </div>
-        <div class="loader__typeLayer">
-          <p class="loader__phrase" aria-live="polite"><span class="loader__phrase-inner" id="loaderPhraseText">Prototyping warm welcome&hellip;</span></p>
-          <div class="loader__rule" id="loaderRule" aria-hidden="true"></div>
-        </div>
-      </div>
-    </div>
-    <button type="button" class="loader__skip" id="loaderSkip">Skip</button>
-  </div>
+  <!-- No loading curtain here on purpose: the branded loader only plays once,
+       on the homepage. Landing on / navigating between case-study pages
+       reveals content immediately (script.js still runs the same nav +
+       content reveal choreography, just without waiting on a loader). -->
 
   <!-- NAV -->
   <header class="nav" id="nav">
@@ -120,7 +93,74 @@
       Back home
     </a>
     <div id="projContent">
-<div class="proj__hero"><div class="proj__hero-img"><img src="../images/my-market/hero.jpg" alt="My Market — case study hero" loading="eager" fetchpriority="high"></div><div class="proj__hero-content"><div class="proj__cat">Brand Identity · 2021</div><h2 class="proj__title"><span class="proj__title-char" style="transition-delay:0.30s">M</span><span class="proj__title-char" style="transition-delay:0.33s">y</span>&nbsp;<span class="proj__title-char" style="transition-delay:0.39s">M</span><span class="proj__title-char" style="transition-delay:0.42s">a</span><span class="proj__title-char" style="transition-delay:0.45s">r</span><span class="proj__title-char" style="transition-delay:0.48s">k</span><span class="proj__title-char" style="transition-delay:0.51s">e</span><span class="proj__title-char" style="transition-delay:0.54s">t</span></h2><p class="proj__tagline">Bringing consistency, visibility, and personality to a fast-moving retail brand.</p></div></div><div class="proj__body"><div class="proj__sec"><div class="proj__reveal"><div class="proj__label">01 — The Brief</div></div><div class="proj__reveal" data-sd="1"><p class="proj__text">Over 2.5 years, I helped shape MyMarket's visual presence across catalogs, packaging, outdoor advertising, stationery, and in-store materials. The goal was simple: create a more cohesive brand experience across every customer touchpoint.</p></div></div><div class="proj__parallax proj__reveal" data-zoomable=""><img src="../images/my-market/parallax.jpg" alt="My Market — full-bleed detail" loading="lazy"></div><div class="proj__sec"><div class="proj__reveal"><div class="proj__label">02 — The Challenge</div></div><div class="proj__reveal" data-sd="1"><p class="proj__text">Retail never stands still. With bi-weekly campaigns, seasonal promotions, and hundreds of assets moving through production, the challenge was keeping everything fresh while maintaining a consistent brand identity.</p></div></div><div class="proj__bento proj__bento--3"><div class="bento bento--blur" data-zoomable=""><img src="../images/my-market/bento-1.jpg" alt="My Market — project detail 1" loading="lazy"></div><div class="bento bento--blur" data-zoomable=""><img src="../images/my-market/bento-2.jpg" alt="My Market — project detail 2" loading="lazy"></div><div class="bento bento--blur" data-zoomable=""><img src="../images/my-market/bento-3.jpg" alt="My Market — project detail 3" loading="lazy"></div></div><div class="proj__print-full bento--blur" data-zoomable=""><img src="../images/my-market/challenge.jpg" alt="My Market — challenge" loading="lazy"></div><div class="proj__sec"><div class="proj__reveal"><div class="proj__label">03 — The Approach</div></div><div class="proj__reveal" data-sd="1"><p class="proj__text">I developed and delivered a wide range of print and brand assets—from 16–52 page catalogs and product packaging to billboards, fleet graphics, loyalty cards, and promotional materials. Each piece was designed within the brand framework while introducing campaign-specific concepts, themes, and storytelling that kept the communication engaging and relevant.</p></div></div><div class="proj__gallery" style="gap:clamp(20px,3vh,40px)"><div class="proj__img proj__img--fly" data-zoomable="" style="aspect-ratio:16/9;overflow:hidden"><img src="../images/my-market/approach-1.jpg" alt="My Market — process detail 1" loading="lazy" style="width:100%;height:100%;object-fit:cover"></div><div class="proj__img proj__img--fly from-left" data-zoomable="" style="aspect-ratio:16/9;overflow:hidden"><img src="../images/my-market/approach-2.jpg" alt="My Market — process detail 2" loading="lazy" style="width:100%;height:100%;object-fit:cover"></div><div class="proj__img proj__img--fly" data-zoomable="" style="aspect-ratio:16/9;overflow:hidden"><img src="../images/my-market/approach-3.jpg" alt="My Market — process detail 3" loading="lazy" style="width:100%;height:100%;object-fit:cover"></div></div><div class="proj__print-full bento--blur" data-zoomable=""><img src="../images/my-market/approach-4.jpg" alt="My Market — process detail 4" loading="lazy"></div><div class="proj__sec"><div class="proj__reveal"><div class="proj__label">04 — The Outcome</div></div><div class="proj__reveal" data-sd="1"><p class="proj__text">A stronger and more unified brand presence across print, retail, outdoor, and digital channels. The work helped create a consistent customer experience while supporting ongoing promotional activity at scale.</p></div></div><div class="proj__bento proj__bento--4"><div class="bento bento--clip" data-zoomable=""><img src="../images/my-market/bento-extra-3.jpg" alt="My Market — bento extra 3" loading="lazy"></div><div class="bento bento--clip" data-zoomable=""><img src="../images/my-market/bento-extra-1.jpg" alt="My Market — bento extra 1" loading="lazy"></div><div class="bento bento--clip" data-zoomable=""><img src="../images/my-market/bento-extra-2.jpg" alt="My Market — bento extra 2" loading="lazy"></div></div><div class="proj__quote"><span class="proj__quote-word" style="transition-delay:0.00s">A</span> <span class="proj__quote-word" style="transition-delay:0.07s">neighbourhood</span> <span class="proj__quote-word" style="transition-delay:0.14s">brand</span> <span class="proj__quote-word" style="transition-delay:0.21s">should</span> <span class="proj__quote-word" style="transition-delay:0.28s">feel</span> <span class="proj__quote-word" style="transition-delay:0.35s">like</span> <span class="proj__quote-word" style="transition-delay:0.42s">it</span> <span class="o"> <span class="proj__quote-word" style="transition-delay:0.49s">grew</span> </span> <span class="proj__quote-word" style="transition-delay:0.56s">there.</span></div><div class="proj__sec"><div class="proj__reveal"><div class="proj__label">05 — The Reflection</div></div><div class="proj__reveal" data-sd="1"><p class="proj__text">This project taught me the value of systems thinking. Good retail design isn't about a single standout asset—it's about making hundreds of touchpoints feel like they're part of the same conversation.</p></div></div><div class="proj__reflection-visual"><div class="bento bento--blur" data-zoomable=""><img src="../images/my-market/reflection-1.jpg" alt="My Market — reflection detail 1" loading="lazy"></div></div></div><div class="proj__nav"><a class="proj__nav-half proj__nav-prev" href="lg-electronics.html" aria-label="Previous project: LG Electronics"><span class="proj__nav-dir"><span class="proj__nav-arrow">←</span>Previous Project</span><span class="proj__nav-title">LG Electronics</span></a><a class="proj__nav-half proj__nav-next" href="smart-point.html" aria-label="Next project: Smart Point"><span class="proj__nav-dir">Next Project<span class="proj__nav-arrow">→</span></span><span class="proj__nav-title">Smart Point</span></a></div>
+<div class="case__open">
+  <div class="case__wrap">
+    <div class="case__kicker">Brand Identity &middot; 2021</div>
+    <h1 class="case__title"><span class="proj__title-char" style="transition-delay:0.30s">M</span><span class="proj__title-char" style="transition-delay:0.33s">y</span>&nbsp;<span class="proj__title-char" style="transition-delay:0.36s">M</span><span class="proj__title-char" style="transition-delay:0.39s">a</span><span class="proj__title-char" style="transition-delay:0.42s">r</span><span class="proj__title-char" style="transition-delay:0.45s">k</span><span class="proj__title-char" style="transition-delay:0.48s">e</span><span class="proj__title-char" style="transition-delay:0.51s">t</span></h1>
+    <div class="case__meta-row">
+      <p class="case__headline">Bringing consistency, visibility, and personality to a fast-moving retail brand.</p>
+      <dl class="case__meta">
+        <div><dt>Category</dt><dd>Brand Identity</dd></div>
+        <div><dt>Year</dt><dd>2021</dd></div>
+      </dl>
+    </div>
+  </div>
+  <div class="case__hero-wrap is-r">
+    <div class="case__hero-frame frame bento--blur" data-zoomable aria-label="My Market &mdash; case study hero">
+      <img src="../images/my-market/hero.jpg" alt="My Market &mdash; case study hero" loading="eager" fetchpriority="high">
+    </div>
+  </div>
+</div><section class="chapter">
+  <div class="case__wrap">
+    <span class="chapter__ghost is-l" aria-hidden="true">01</span>
+    <div class="chapter__label proj__reveal">01 <span>&mdash; The Challenge</span></div>
+    <div class="chapter__row">
+      <p class="measure measure--l proj__reveal">Retail never stands still. With bi-weekly campaigns, seasonal promotions, and hundreds of assets moving through production, the challenge was keeping everything fresh while maintaining a consistent brand identity.</p>
+    </div>
+  </div>
+  <div class="duo is-rev"><div class="frame frame--wide bento--fly" data-zoomable><img src="../images/my-market/challenge.jpg" alt="My Market — retail context" loading="lazy"></div><div class="frame frame--tall bento--fly" data-zoomable><img src="../images/my-market/bento-extra-1.jpg" alt="My Market — in-store detail" loading="lazy"></div></div>
+</section><section class="chapter">
+  <div class="case__wrap">
+    <span class="chapter__ghost is-r" aria-hidden="true">02</span>
+    <div class="chapter__label proj__reveal">02 <span>&mdash; Creative Thinking</span></div>
+    <div class="chapter__row">
+      <p class="measure measure--r proj__reveal">I developed and delivered a wide range of print and brand assets—from 16–52 page catalogs and product packaging to billboards, fleet graphics, loyalty cards, and promotional materials. Each piece was designed within the brand framework while introducing campaign-specific concepts, themes, and storytelling that kept the communication engaging and relevant.</p>
+    </div>
+  </div>
+  <div class="strip"><div class="frame frame--tall bento--fly" data-zoomable><img src="../images/my-market/approach-1.jpg" alt="My Market — catalog spread" loading="lazy"></div><div class="frame frame--tall bento--fly" data-zoomable><img src="../images/my-market/approach-2.jpg" alt="My Market — packaging" loading="lazy"></div><div class="frame frame--tall bento--fly" data-zoomable><img src="../images/my-market/approach-3.jpg" alt="My Market — outdoor advertising" loading="lazy"></div></div>
+</section><section class="chapter chapter--tight">
+  <div class="case__wrap"><div class="chapter__label proj__reveal">03 <span>&mdash; Visual Exploration</span></div></div>
+  
+  <div class="proj__parallax bento--blur"><img src="../images/my-market/parallax.jpg" alt="My Market — campaign wide shot"></div>
+  <div class="case__wrap">
+  <div class="duo"><div class="frame frame--wide bento--fly" data-zoomable><img src="../images/my-market/bento-1.jpg" alt="My Market — brand asset" loading="lazy"></div><div class="frame frame--tall bento--fly" data-zoomable><img src="../images/my-market/bento-extra-2.jpg" alt="My Market — brand asset" loading="lazy"></div></div></div>
+</section><section class="chapter">
+  <div class="case__wrap">
+    <span class="chapter__ghost is-l" aria-hidden="true">04</span>
+    <div class="chapter__label proj__reveal">04 <span>&mdash; Final Experience</span></div>
+    <div class="chapter__row">
+      <p class="measure measure--l proj__reveal">A stronger and more unified brand presence across print, retail, outdoor, and digital channels. The work helped create a consistent customer experience while supporting ongoing promotional activity at scale.</p>
+    </div>
+  </div>
+  <div class="strip"><div class="frame frame--tall bento--fly" data-zoomable><img src="../images/my-market/bento-2.jpg" alt="My Market — final touchpoint" loading="lazy"></div><div class="frame frame--tall bento--fly" data-zoomable><img src="../images/my-market/bento-3.jpg" alt="My Market — final touchpoint" loading="lazy"></div><div class="frame frame--tall bento--fly" data-zoomable><img src="../images/my-market/approach-4.jpg" alt="My Market — final touchpoint" loading="lazy"></div></div>
+</section><section class="chapter">
+  <div class="case__wrap case__wrap--narrow">
+    <div class="chapter__label proj__reveal">05 <span>&mdash; Impact</span></div>
+    <p class="pull proj__reveal">A neighbourhood brand should feel like it <span class='o'>grew</span> there.</p>
+    <p class="measure proj__reveal" style="margin-top:clamp(28px,4vh,44px);max-width:52ch">This project taught me the value of systems thinking. Good retail design isn't about a single standout asset—it's about making hundreds of touchpoints feel like they're part of the same conversation.</p>
+    <dl class="case__credits proj__reveal">
+      <div><dt>Category</dt><dd>Brand Identity</dd></div>
+      <div><dt>Year</dt><dd>2021</dd></div>
+    </dl>
+  </div>
+  <div class="frame frame--wide bento--fly" data-zoomable><img src="../images/my-market/reflection-1.jpg" alt="My Market — closing note" loading="lazy"></div>
+</section><a class="case__next" href="smart-point.html" aria-label="Next case study: Smart Point">
+  <div class="case__wrap">
+    <span class="case__next-label">Next case study</span>
+    <h2 class="case__next-title">Smart Point</h2>
+    <span class="case__next-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></span>
+  </div>
+</a>
     </div>
   </div>
 

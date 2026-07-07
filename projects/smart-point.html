@@ -43,14 +43,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@200..900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../styles.css">
 </head>
-<body class="is-locked">
+<body>
 
   <a class="skip-link" href="#projContent">Skip to content</a>
 
   <noscript>
     <style>
-      .loader,.cursor,.grain,.hero__sculpt-hint{display:none!important}
-      body.is-locked{overflow:auto;height:auto}
+      .cursor,.grain,.hero__sculpt-hint{display:none!important}
       .reveal,.hero__word,.hero__top,.nav{opacity:1!important;transform:none!important;filter:none!important}
       /* case-study content: without JS, .proj never receives .is-open, and it
          is normally a fixed full-viewport panel — so for no-JS visitors make
@@ -72,36 +71,10 @@
   <div class="dm-grid" id="dmGrid" aria-hidden="true"></div>
   <div class="dm-badge" id="dmBadge" aria-hidden="true"><i></i> Design mode — tap to exit</div>
 
-  <!-- LOADER (not aria-hidden: it holds the focusable Skip button while visible;
-       .is-gone applies display:none which removes it from the a11y tree anyway) -->
-  <div class="loader" id="loader">
-    <div class="loader__panel">
-      <div class="loader__inner" id="loaderInner">
-        <div class="loader__sigLayer">
-          <div class="loader__sig" id="loaderSig">
-            <svg viewBox="0 0 219.38 162.22" aria-hidden="true">
-              <defs>
-                <!-- the V mark, one continuous line, reused by both layers -->
-                <path id="sigShape" d="M162.37,24.56l13.55-22.28h37.84l-85.14,157.67H97.09L2.14,2.28h43.1l59.91,105.46V57.92l0,0
-                  c-4.68-1.57-8.06-5.99-8.06-11.21c0-6.53,5.29-11.83,11.82-11.83c6.53,0,11.83,5.3,11.83,11.83c0,4.88-2.96,9.06-7.18,10.87l0,0
-                  v94.66l56.05-104.06c0,0-14.01-3.15-18.91-22.42c-4.91-19.27-3.51-23.48-3.51-23.48H72.21c0,0-0.7,4.56-3.5,12.27
-                  c-2.8,7.7-3.16,6.71-3.16,6.71"></path>
-              </defs>
-              <!-- the ink: sketched in by dash-offset, thickens to full weight on lock -->
-              <use class="sig__pen" id="sigPen" href="#sigShape" xlink:href="#sigShape"></use>
-              <!-- the accent: a short orange segment chasing the pen tip, then settling -->
-              <use class="sig__accent" id="sigAccent" href="#sigShape" xlink:href="#sigShape"></use>
-            </svg>
-          </div>
-        </div>
-        <div class="loader__typeLayer">
-          <p class="loader__phrase" aria-live="polite"><span class="loader__phrase-inner" id="loaderPhraseText">Prototyping warm welcome&hellip;</span></p>
-          <div class="loader__rule" id="loaderRule" aria-hidden="true"></div>
-        </div>
-      </div>
-    </div>
-    <button type="button" class="loader__skip" id="loaderSkip">Skip</button>
-  </div>
+  <!-- No loading curtain here on purpose: the branded loader only plays once,
+       on the homepage. Landing on / navigating between case-study pages
+       reveals content immediately (script.js still runs the same nav +
+       content reveal choreography, just without waiting on a loader). -->
 
   <!-- NAV -->
   <header class="nav" id="nav">
@@ -120,7 +93,70 @@
       Back home
     </a>
     <div id="projContent">
-<div class="proj__hero"><div class="proj__hero-img"><img src="../images/smart-point/hero.jpg" alt="Smart Point — case study hero" loading="eager" fetchpriority="high"></div><div class="proj__hero-content"><div class="proj__cat">Brand Design · 2021</div><h2 class="proj__title"><span class="proj__title-char" style="transition-delay:0.30s">S</span><span class="proj__title-char" style="transition-delay:0.33s">m</span><span class="proj__title-char" style="transition-delay:0.36s">a</span><span class="proj__title-char" style="transition-delay:0.39s">r</span><span class="proj__title-char" style="transition-delay:0.42s">t</span>&nbsp;<span class="proj__title-char" style="transition-delay:0.48s">P</span><span class="proj__title-char" style="transition-delay:0.51s">o</span><span class="proj__title-char" style="transition-delay:0.54s">i</span><span class="proj__title-char" style="transition-delay:0.57s">n</span><span class="proj__title-char" style="transition-delay:0.60s">t</span></h2><p class="proj__tagline">Built to be seen. Designed to be trusted.</p></div></div><div class="proj__body"><div class="proj__sec"><div class="proj__reveal"><div class="proj__label">01 — The Brief</div></div><div class="proj__reveal" data-sd="1"><p class="proj__text">Smart Point needed a visual identity that reflected the reliability and professionalism of its repair services. I created a cohesive branding system spanning storefront graphics, indoor signage, stationery, packaging, and promotional materials.</p></div></div><div class="proj__print-full bento--blur" data-zoomable=""><img src="../images/smart-point/outcome-1.jpg" alt="Smart Point — outcome shot 1" loading="lazy"></div><div class="proj__sec"><div class="proj__reveal"><div class="proj__label">02 — The Challenge</div></div><div class="proj__reveal" data-sd="1"><p class="proj__text">The brand lacked a consistent visual presence across customer touchpoints. The goal was to create a recognizable identity that would stand out on the street while building trust with customers.</p></div></div><div class="proj__spread"><div class="bento bento--clip" data-zoomable=""><img src="../images/smart-point/bento-1.jpg" alt="Smart Point — project detail 1" loading="lazy"></div><div class="bento bento--clip" data-zoomable=""><img src="../images/smart-point/bento-2.jpg" alt="Smart Point — project detail 2" loading="lazy"></div></div><div class="proj__sec"><div class="proj__reveal"><div class="proj__label">03 — The Approach</div></div><div class="proj__reveal" data-sd="1"><p class="proj__text">I developed a unified design system built around consistent colors, typography, shapes, and visual language. The project included large-format storefront banners, indoor entrance graphics, business cards, gift boxes, and branded collateral. Every element was designed to work together, creating a seamless experience from first impression to final purchase.</p></div></div><div class="proj__gallery"><div class="proj__img proj__img--fly" data-zoomable=""><img src="../images/smart-point/bento-3.jpg" alt="Smart Point — project detail 3" loading="lazy"></div><div class="proj__img proj__img--fly from-left" data-zoomable=""><img src="../images/smart-point/approach-1.jpg" alt="Smart Point — process detail 1" loading="lazy"></div></div><div class="proj__spread"><div class="bento bento--clip" data-zoomable=""><img src="../images/smart-point/approach-2.jpg" alt="Smart Point — process detail 2" loading="lazy"></div><div class="bento bento--clip" data-zoomable=""><img src="../images/smart-point/approach-3.jpg" alt="Smart Point — process detail 3" loading="lazy"></div></div></div><div class="proj__nav"><a class="proj__nav-half proj__nav-prev" href="my-market.html" aria-label="Previous project: My Market"><span class="proj__nav-dir"><span class="proj__nav-arrow">←</span>Previous Project</span><span class="proj__nav-title">My Market</span></a><a class="proj__nav-half proj__nav-next" href="reverto-winery.html" aria-label="Next project: Reverto Winery"><span class="proj__nav-dir">Next Project<span class="proj__nav-arrow">→</span></span><span class="proj__nav-title">Reverto Winery</span></a></div>
+<div class="case__open">
+  <div class="case__wrap">
+    <div class="case__kicker">Brand Design &middot; 2021</div>
+    <h1 class="case__title"><span class="proj__title-char" style="transition-delay:0.30s">S</span><span class="proj__title-char" style="transition-delay:0.33s">m</span><span class="proj__title-char" style="transition-delay:0.36s">a</span><span class="proj__title-char" style="transition-delay:0.39s">r</span><span class="proj__title-char" style="transition-delay:0.42s">t</span>&nbsp;<span class="proj__title-char" style="transition-delay:0.45s">P</span><span class="proj__title-char" style="transition-delay:0.48s">o</span><span class="proj__title-char" style="transition-delay:0.51s">i</span><span class="proj__title-char" style="transition-delay:0.54s">n</span><span class="proj__title-char" style="transition-delay:0.57s">t</span></h1>
+    <div class="case__meta-row">
+      <p class="case__headline">Built to be seen. Designed to be trusted.</p>
+      <dl class="case__meta">
+        <div><dt>Category</dt><dd>Brand Design</dd></div>
+        <div><dt>Year</dt><dd>2021</dd></div>
+      </dl>
+    </div>
+  </div>
+  <div class="case__hero-wrap ">
+    <div class="case__hero-frame frame bento--blur" data-zoomable aria-label="Smart Point &mdash; case study hero">
+      <img src="../images/smart-point/hero.jpg" alt="Smart Point &mdash; case study hero" loading="eager" fetchpriority="high">
+    </div>
+  </div>
+</div><section class="chapter">
+  <div class="case__wrap">
+    <span class="chapter__ghost is-l" aria-hidden="true">01</span>
+    <div class="chapter__label proj__reveal">01 <span>&mdash; The Challenge</span></div>
+    <div class="chapter__row">
+      <p class="measure measure--l proj__reveal">The brand lacked a consistent visual presence across customer touchpoints. The goal was to create a recognizable identity that would stand out on the street while building trust with customers.</p>
+    </div>
+  </div>
+</section><section class="chapter">
+  <div class="case__wrap">
+    <span class="chapter__ghost is-r" aria-hidden="true">02</span>
+    <div class="chapter__label proj__reveal">02 <span>&mdash; Creative Thinking</span></div>
+    <div class="chapter__row">
+      <p class="measure measure--r proj__reveal">I developed a unified design system built around consistent colors, typography, shapes, and visual language. The project included large-format storefront banners, indoor entrance graphics, business cards, gift boxes, and branded collateral. Every element was designed to work together, creating a seamless experience from first impression to final purchase.</p>
+    </div>
+  </div>
+  <div class="strip"><div class="frame frame--tall bento--fly" data-zoomable><img src="../images/smart-point/approach-1.jpg" alt="Smart Point — storefront graphics" loading="lazy"></div><div class="frame frame--tall bento--fly" data-zoomable><img src="../images/smart-point/approach-2.jpg" alt="Smart Point — signage detail" loading="lazy"></div><div class="frame frame--tall bento--fly" data-zoomable><img src="../images/smart-point/approach-3.jpg" alt="Smart Point — stationery" loading="lazy"></div></div>
+</section><section class="chapter chapter--tight">
+  <div class="case__wrap"><div class="chapter__label proj__reveal">03 <span>&mdash; Visual Exploration</span></div>
+  
+  <div class="duo"><div class="frame frame--wide bento--fly" data-zoomable><img src="../images/smart-point/bento-1.jpg" alt="Smart Point — identity system" loading="lazy"></div><div class="frame frame--tall bento--fly" data-zoomable><img src="../images/smart-point/bento-2.jpg" alt="Smart Point — identity detail" loading="lazy"></div></div></div>
+</section><section class="chapter">
+  <div class="case__wrap">
+    <span class="chapter__ghost is-l" aria-hidden="true">04</span>
+    <div class="chapter__label proj__reveal">04 <span>&mdash; Final Experience</span></div>
+    <div class="chapter__row">
+      <p class="measure measure--l proj__reveal">A stronger and more professional brand presence across physical touchpoints, helping Smart Point improve visibility, reinforce trust, and create a more cohesive customer experience.</p>
+    </div>
+  </div><div class="frame frame--full bento--fly" data-zoomable><img src="../images/smart-point/outcome-1.jpg" alt="Smart Point — final result" loading="lazy"></div>
+</section><section class="chapter">
+  <div class="case__wrap case__wrap--narrow">
+    <div class="chapter__label proj__reveal">05 <span>&mdash; Impact</span></div>
+    <p class="pull proj__reveal">Clarity is a form of <span class='o'>respect</span>.</p>
+    <p class="measure proj__reveal" style="margin-top:clamp(28px,4vh,44px);max-width:52ch">This project showed how consistency can be just as powerful as creativity. By aligning every touchpoint under a single visual system, the brand became more recognizable, memorable, and credible.</p>
+    <dl class="case__credits proj__reveal">
+      <div><dt>Category</dt><dd>Brand Design</dd></div>
+      <div><dt>Year</dt><dd>2021</dd></div>
+    </dl>
+  </div>
+  <div class="frame frame--wide bento--fly" data-zoomable><img src="../images/smart-point/bento-3.jpg" alt="Smart Point — closing note" loading="lazy"></div>
+</section><a class="case__next" href="reverto-winery.html" aria-label="Next case study: Reverto Winery">
+  <div class="case__wrap">
+    <span class="case__next-label">Next case study</span>
+    <h2 class="case__next-title">Reverto Winery</h2>
+    <span class="case__next-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></span>
+  </div>
+</a>
     </div>
   </div>
 
