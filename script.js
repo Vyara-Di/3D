@@ -115,7 +115,7 @@
   try { skipIntro = sessionStorage.getItem(SEEN_KEY) === '1'; } catch (e){ /* storage blocked — fall back to full intro */ }
   try { sessionStorage.setItem(SEEN_KEY, '1'); } catch (e){}
 
-  var fastIntro = reduce || skipIntro;
+  var fastIntro = reduce || skipIntro || !loader;
 
   var sigShapeEl = document.getElementById('sigShape');
   var sigPen     = document.getElementById('sigPen');
@@ -248,7 +248,7 @@
     }
   });
 
-  setTimeout(revealOnce, fastIntro ? 200 : LOGO_START_DELAY + 3600);
+  setTimeout(revealOnce, !loader ? 0 : (fastIntro ? 200 : LOGO_START_DELAY + 3600));
 
   function revealHero(){
     if (skipBtn){ skipBtn.removeEventListener('click', revealOnce); }
@@ -262,15 +262,17 @@
     var hint      = document.getElementById('sculptHint');
 
     function revealCopy(){
-      setTimeout(function(){ if (nav) nav.classList.add('is-in'); },     0);
+      setTimeout(function(){
+        if (nav) nav.classList.add('is-in');
+        /* case-study pages have no hero — this is where their content reveals instead */
+        if (proj){ proj.classList.add('is-open'); initCaseStudyReveals(); }
+        kickReveals();
+      }, 0);
       setTimeout(function(){ if (heroTop) heroTop.classList.add('is-in'); }, 120);
       setTimeout(function(){ if (wordLeft) wordLeft.classList.add('is-in'); }, 200);
       setTimeout(function(){ if (wordRight) wordRight.classList.add('is-in'); },340);
       setTimeout(function(){
         if (hint) hint.classList.add('is-in');
-        /* case-study pages have no hero — this is where their content reveals instead */
-        if (proj){ proj.classList.add('is-open'); initCaseStudyReveals(); }
-        kickReveals();
       }, 460);
     }
 
@@ -279,6 +281,13 @@
     document.body.classList.remove('is-locked');
 
     var revealFn = window.__sculpture ? window.__sculpture.reveal : function(cb){ cb && cb(); };
+
+    if (!loader){
+      /* no loading curtain on this page at all — reveal straight away */
+      revealFn(function(){});
+      revealCopy();
+      return;
+    }
 
     if (fastIntro){
       loader.classList.add('is-leaving');
@@ -302,7 +311,7 @@
     if (!cardsWrap) return;
     var cards = cardsWrap.querySelectorAll('.card');
     function rnd(a, b){ return a + Math.random() * (b - a); }
-    var fixedRot = { 0: -4, 1: 5, 2: -5, 3: 3, 4: -4 };
+    var fixedRot = { 0: -4, 1: 5, 2: -5, 3: 3, 4: -4, 5: 4 };
     cards.forEach(function(card, i){
       var rot = (fixedRot[i] !== undefined) ? fixedRot[i] : rnd(-6, 6);
       card.style.setProperty('--rot', rot.toFixed(2) + 'deg');

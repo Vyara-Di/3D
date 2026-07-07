@@ -852,3 +852,138 @@
     opacity:0;transform:translateY(8px);transition:opacity .35s var(--ease) .28s,transform .35s var(--ease) .28s}
   .card__verb::after{content:"";width:16px;height:1.5px;background:var(--orange);margin-left:.6em}
   .card:hover .card__verb,.card:focus-visible .card__verb{opacity:1;transform:none}
+
+  /* ═══════════════════════════════════════════════════════════════════
+     EDITORIAL CASE STUDY SYSTEM
+     A shared compositional vocabulary for /projects/*.html — built so
+     each project can be laid out asymmetrically with its own rhythm and
+     available imagery, while every page still reads as the same hand.
+     Type stays single-family per the token sheet — Urbanist, weights
+     200–900. Voice/emotion now comes from weight + italic contrast
+     (900 display vs. 200 italic quotes) rather than a second typeface —
+     titles, headlines, pull
+     quotes. Grotesk (Urbanist) stays for UI chrome and running text.
+     ═══════════════════════════════════════════════════════════════════ */
+
+  .case__wrap{max-width:1400px;margin:0 auto;padding:0 var(--pad)}
+  .case__wrap--narrow{max-width:1040px}
+
+  /* ---- opening: statement, not a hero banner ---- */
+  .case__open{min-height:100svh;display:flex;flex-direction:column;justify-content:center;
+    position:relative;padding:clamp(120px,16vh,180px) 0 clamp(60px,8vh,100px)}
+  .case__kicker{display:flex;align-items:center;gap:12px;font-size:.72rem;font-weight:700;
+    text-transform:uppercase;letter-spacing:.28em;color:var(--orange);margin-bottom:clamp(26px,5vh,52px);
+    opacity:0;transform:translateY(14px);transition:opacity .8s var(--ease) .1s,transform .8s var(--ease) .1s}
+  .proj.is-open .case__kicker{opacity:1;transform:none}
+  .case__kicker::before{content:"";width:34px;height:1px;background:currentColor}
+
+  .case__title{font-weight:900;font-size:clamp(3.2rem,11vw,10rem);
+    line-height:.87;letter-spacing:-.02em;color:var(--ink);max-width:17ch}
+  .case__title em{font-style:italic;font-weight:400;color:var(--orange)}
+
+  .case__meta-row{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;
+    gap:28px;margin-top:clamp(40px,6vh,64px)}
+  .case__headline{font-style:italic;font-weight:200;
+    font-size:clamp(1.1rem,2vw,1.5rem);line-height:1.42;color:var(--ink-soft);max-width:36ch;
+    opacity:0;transform:translateY(16px);transition:opacity .8s var(--ease) .3s,transform .8s var(--ease) .3s}
+  .proj.is-open .case__headline{opacity:1;transform:none}
+  .case__meta{display:flex;gap:clamp(26px,4vw,52px);flex:0 0 auto;
+    opacity:0;transform:translateY(16px);transition:opacity .8s var(--ease) .4s,transform .8s var(--ease) .4s}
+  .proj.is-open .case__meta{opacity:1;transform:none}
+  .case__meta dt{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.18em;
+    color:var(--ink-soft);opacity:.65;margin-bottom:6px}
+  .case__meta dd{font-size:.86rem;font-weight:600;color:var(--ink)}
+
+  .case__hero-wrap{margin-top:clamp(56px,9vh,110px);display:flex}
+  .case__hero-wrap.is-r{justify-content:flex-end}
+  .case__hero-frame{width:min(78vw,980px)}
+  @media(max-width:760px){ .case__hero-frame{width:100%} }
+
+  /* ---- chapter rhythm ---- */
+  .chapter{position:relative;padding:clamp(90px,14vh,170px) 0}
+  .chapter--tight{padding:clamp(50px,8vh,100px) 0}
+  .chapter__ghost{position:absolute;top:clamp(-16px,-2vw,6px);font-weight:800;
+    font-size:clamp(9rem,22vw,19rem);line-height:1;color:var(--ink);opacity:.045;pointer-events:none;
+    z-index:0;user-select:none}
+  .chapter__ghost.is-l{left:clamp(-16px,-1vw,0)}
+  .chapter__ghost.is-r{right:clamp(-16px,-1vw,0)}
+  .chapter__label{position:relative;z-index:1;display:flex;align-items:baseline;gap:14px;
+    font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.22em;color:var(--orange);
+    margin-bottom:clamp(28px,4vh,44px)}
+  .chapter__label span{color:var(--ink-soft);font-weight:600;letter-spacing:.08em}
+
+  .chapter__row{position:relative;z-index:1;display:grid;grid-template-columns:repeat(12,1fr);
+    gap:clamp(20px,3vw,40px)}
+  .measure{font-weight:300;font-size:clamp(1.15rem,2.5vw,1.85rem);line-height:1.46;
+    letter-spacing:-.01em;color:var(--ink)}
+  .measure b{font-weight:700}
+  .measure--l{grid-column:1/8}
+  .measure--r{grid-column:6/13}
+  .measure--indent{grid-column:3/11}
+  @media(max-width:900px){
+    .chapter__row{display:block}
+    .measure--l,.measure--r,.measure--indent{max-width:none}
+  }
+
+  /* ---- image vocabulary: reuses .bento--fly/.bento--blur/.bento--clip
+     for reveal (already unified above), adds framing + composition ---- */
+  .frame{overflow:hidden;border-radius:2px 22px 2px 22px;position:relative;background:var(--sand)}
+  .frame--full{width:100vw;margin-left:calc(50% - 50vw);border-radius:0;aspect-ratio:21/9}
+  .frame--tall{aspect-ratio:3/4}
+  .frame--wide{aspect-ratio:16/10}
+  .frame--sq{aspect-ratio:1/1}
+
+  .duo{display:grid;grid-template-columns:1.35fr .65fr;gap:clamp(18px,3vw,36px);align-items:end;
+    margin:clamp(50px,8vh,90px) 0}
+  .duo.is-rev{grid-template-columns:.65fr 1.35fr}
+  .duo.is-rev>*:first-child{order:2}
+  .duo>*:nth-child(2){margin-bottom:clamp(40px,7vh,70px)}
+  @media(max-width:760px){
+    .duo,.duo.is-rev{grid-template-columns:1fr;gap:20px}
+    .duo>*:nth-child(2){margin-bottom:0}
+    .duo.is-rev>*:first-child{order:0}
+  }
+
+  .strip{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,2vw,22px);
+    margin:clamp(40px,7vh,70px) 0}
+  .strip>*:nth-child(2){transform:translateY(clamp(20px,4vh,44px))}
+  @media(max-width:760px){
+    .strip{grid-template-columns:1fr 1fr}
+    .strip>*:nth-child(2){transform:none}
+    .strip>*:nth-child(3){grid-column:1/3}
+  }
+
+  /* ---- pull quote: left-set, editorial, not centered/banner-like ---- */
+  .pull{position:relative;z-index:1;font-weight:200;font-style:italic;
+    font-size:clamp(2rem,5.2vw,4.2rem);line-height:1.14;letter-spacing:-.01em;color:var(--ink);
+    max-width:18ch}
+  .pull .o{color:var(--orange);font-weight:600;font-style:normal}
+
+  .case__credits{display:flex;flex-wrap:wrap;gap:clamp(30px,5vw,64px);position:relative;z-index:1;
+    padding-top:clamp(40px,6vh,64px);margin-top:clamp(40px,6vh,64px);border-top:1px solid var(--line)}
+  .case__credits dt{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.18em;
+    color:var(--ink-soft);opacity:.65;margin-bottom:8px}
+  .case__credits dd{font-size:.9rem;font-weight:600;color:var(--ink)}
+
+  /* ---- next chapter: editorial transition, not a nav bar ---- */
+  .case__next{display:flex;flex-direction:column;justify-content:center;min-height:62vh;
+    position:relative;border-top:1px solid var(--line)}
+  .case__next-label{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.24em;
+    color:var(--ink-soft)}
+  .case__next-title{font-weight:900;font-size:clamp(2.8rem,9.5vw,7.6rem);
+    line-height:.92;letter-spacing:-.02em;color:var(--ink);margin-top:14px;transition:color .4s var(--ease)}
+  .case__next:hover .case__next-title{color:var(--orange)}
+  .case__next-arrow{display:inline-flex;margin-top:22px;color:var(--orange)}
+  .case__next-arrow svg{width:30px;height:30px;transition:transform .4s var(--ease-io)}
+  .case__next:hover .case__next-arrow svg{transform:translateX(10px)}
+
+  .case__end{min-height:56vh;display:flex;flex-direction:column;align-items:flex-start;
+    justify-content:center;gap:28px;border-top:1px solid var(--line)}
+  .case__end p{font-style:italic;font-weight:200;
+    font-size:clamp(1.4rem,3vw,2rem);color:var(--ink-soft);max-width:24ch}
+
+  @media(max-width:760px){
+    .case__open{padding:clamp(96px,14vh,140px) 0 44px}
+    .chapter{padding:clamp(60px,10vh,110px) 0}
+    .case__meta-row{align-items:flex-start}
+  }

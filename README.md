@@ -84,7 +84,38 @@ assets/Vyara-Dimitrova_CV.html      (linked from the footer; referenced as an
                                       you deploy under a sub-path)
 ```
 
-## Deploying to GitHub Pages
+## Editorial redesign (case study pages)
+
+The six `/projects/*.html` pages were redesigned from a standard bento-grid
+case-study format into an editorial layout:
+
+- **Opening statement, not a hero banner.** Each page opens with an
+  oversized serif title (character-by-character reveal, same mechanism as
+  the homepage), a one-line headline, and small metadata — then an
+  asymmetrically offset hero image (not a full-bleed generic banner).
+- **Five-part narrative arc** per case study: Challenge → Creative Thinking
+  → Visual Exploration → Final Experience → Impact. Each is a numbered
+  "chapter" with a giant faint ghost numeral, generous whitespace, and a
+  narrow offset text column (alternating left/right) rather than a repeated
+  grid.
+- **Asymmetric image compositions** (`.duo`, `.strip`, `.frame--full`
+  cinematic moments, `.proj__parallax` scroll-linked images) built per
+  project from that project's own actual asset inventory — no two case
+  studies use the same rhythm, but they share one visual grammar.
+- **Type stays single-family**, per `tokens.html` — Urbanist, weights
+  200–900, no second typeface. Voice and contrast come from weight +
+  italic (900 for display titles, matching `tokens.html`'s `.t-title`
+  spec for case-study titles; 200 italic for headlines/quotes, matching
+  its `.t-quote` spec) rather than from mixing typefaces.
+- **"Next case study"** is now a full-width editorial transition (huge
+  title, arrow) instead of a small nav bar; the last project ends on a
+  quiet closing line instead of just stopping.
+- All of this reuses the *existing* reveal/parallax/lightbox JS
+  (`.proj__reveal`, `.bento--fly`, `.proj__parallax`, `data-zoomable`) — no
+  changes were needed in `script.js` for this redesign, only new CSS and
+  new markup composition inside each page's `#projContent`.
+
+
 
 1. Push this folder as the repo root (or `docs/` if you prefer, adjusting
    Pages' publish source accordingly).
